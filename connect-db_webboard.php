@@ -11,5 +11,5 @@ $bg="white";
     mysqli_select_db($link,$dbname) or die("cannot select database");
 // set ให้อ่านภาษาไทยได้
     mysqli_set_charset($link,"utf8");
-
+// ok sakchan ssddsss
 ?>
