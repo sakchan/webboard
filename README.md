@@ -1,4 +1,4 @@
 #webboard for student
 
 
-The basic webboard help my student to understnad how to write PHP
+The basic webboard help my student to understand how to write PHP
