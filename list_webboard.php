@@ -41,10 +41,10 @@ $sql2 = " select   *
 	     where id_webboard = '$id_webboard'
        ";
 
-$dbquery2 = mysqli_query($link,$sql2) or die("cannot query ");
+$dbquery2 = mysqli_query($link,$sql2);
 
 // นับจำนวนของ  record  ของ  webboard_answer
- $NRow= mysqli_num_rows($dbquery2)   or die("cannot query num_rows");
+ $NRow= mysqli_num_rows($dbquery2);
  
 //echo "Nrow = ".$NRow;
 // นับจำนวนของคำตอบที่แสดงความคิดเห็น
