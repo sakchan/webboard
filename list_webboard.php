@@ -34,29 +34,29 @@ echo "<br><br>";
 
 //เปิดตารางความกว้าง 800  pixel แสดงผลการตอบคำถามของกระทู้
 echo "<table width ='800' border =0 cellpadding='3'  align='center'  >";
-
+//echo "ID_webboard =".$id_webboard;
 // ค้นหาดูว่ามีใครตอบกระทู้นี้หรือยัง
-$sql = " select   *
+$sql2 = " select   *
          from webboard_answer
-	      where id_webboard = $id_webboard
+	     where id_webboard = '$id_webboard'
        ";
 
-$dbquery2 = mysqli_query($link,$sql) or die("cannot query ");
+$dbquery2 = mysqli_query($link,$sql2) or die("cannot query ");
 
 // นับจำนวนของ  record  ของ  webboard_answer
- $NRow=  mysqli_fetch_array($dbquery2, MYSQLI_ASSOC);
+ $NRow= mysqli_num_rows($dbquery2)   or die("cannot query num_rows");
  
-
+//echo "Nrow = ".$NRow;
 // นับจำนวนของคำตอบที่แสดงความคิดเห็น
 $id=0;
 
  //  วนรอบแสดงทีละ  record
  for($j=0;$j<$NRow;$j++) {
   $result2=  mysqli_fetch_array($dbquery2, MYSQLI_ASSOC);
-  $id_question  = $result2['id_question'];
-  $id_webboard  = $result2['id_webboard'];
-  $ans_message  = $result2['ans_message'];
-  $ans_name = $result2['ans_name'];
+  // $id_question  = $result2['id_question'];
+   $id_webboard  = $result2['id_webboard'];
+   $ans_message  = $result2['ans_message'];
+   $ans_name = $result2['ans_name'];
   $ans_email = $result2['ans_email'];
   $ans_ip = $result2['ans_ip'];
   $ans_date_times = $result2['ans_date_times'];
