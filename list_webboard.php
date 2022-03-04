@@ -1,5 +1,6 @@
  <?php
 
+$id_webboard=$_GET['id_webboard'];
 //  เชื่อมฐานข้อมูล
 include  "connect-db_webboard.php";
 
